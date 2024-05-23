@@ -20,16 +20,14 @@
 \usepackage{graphicx} % images support
 %\usepackage{listings} % codeblock support
 %\usepackage{smartdiagram} % diagrams support
-\usepackage[most]{tcolorbox} % callouts support 
-%\usepackage[colorinlistoftodos]{todonotes}
+\usepackage[most]{tcolorbox} % callouts support%\usepackage[colorinlistoftodos]{todonotes}
 \usepackage[dvipsnames, table, xcdraw]{xcolor} % Tables support
 %\usepackage{zed-csp} % cchemas support
 
 %% Formating
 \usepackage{authblk} % to add authors in maketitle
 %\usepackage{blindtext} % to gen filler text
-\usepackage[figurename=Fig.]{caption} % to change prefix of the image caption 
-
+\usepackage[figurename=Fig.]{caption} % to change prefix of the image caption
 \usepackage{cite} % useful to compress multiple quotations into a single entry
 \usepackage{enumitem}
 \usepackage{fancyhdr} % to set page style
@@ -60,7 +58,7 @@
 
 % Author(s) data
 \newcommand{\theAuthor}{Nombre del líder del proyecto}
-\newcommand{\bAuthor}{nombre del segundo particitante}
+\newcommand{\bAuthor}{nombre del segundo participante}
 \newcommand{\cAuthor}{nombre del tercer participante}
 \newcommand{\dAuthor}{nombre del asesor}
 
@@ -115,8 +113,6 @@
 \renewcommand{\arraystretch}{1.2} % <-- Adjust vertical spacing
 \addto\captionsspanish{\renewcommand{\tablename}{\scshape Tabla}}
 
-\title{\fontsize{24}{28.8}\selectfont \theTitle}
-
 %% Styles
 \hypersetup{colorlinks=false} % Esilo de enlaces
 \urlstyle{same}
@@ -152,6 +148,9 @@
 \rfoot{\small Curso impartido por \profesor}
 
 %% Title
+\title{
+	\vspace*{-1cm}	\fontsize{24}{28.8}\selectfont \theTitle
+}
 \author{\theAuthor}
 \author{\bAuthor}
 
@@ -164,9 +163,9 @@
 	\fontfamily{pcr}\selectfont
 	\theAuthorMail\\
 	\fontfamily{pcr}\selectfont
-	\cAuthorMail\\
-	\fontfamily{pcr}\selectfont
 	\bAuthorMail\\
+	\fontfamily{pcr}\selectfont
+	\cAuthorMail\\
 	\fontfamily{pcr}\selectfont
 	\dAuthorMail
 	\vspace*{-8pt}
@@ -381,8 +380,7 @@ Los ejemplos enumerados en la sección de referencias de este documento incluyen
 
 \begin{itemize}
 	\item ejemplo de un libro \cite{MetevVeiko1998}
-	\item ejemplo de un libro parte de una serie \cite{Breckling1989} 
-	\item ejemplo de otro artículo de revista \cite{Zhang1999}
+	\item ejemplo de un libro parte de una serie \cite{Breckling1989}	\item ejemplo de otro artículo de revista \cite{Zhang1999}
 	\item ejemplo de un artículo de conferencia [4] \cite{Wegmuller2000}
 	\item ejemplo de una patente \cite{Sorace1997}
 	\item ejemplo de un sitio web \cite{IEEEwebsite}
