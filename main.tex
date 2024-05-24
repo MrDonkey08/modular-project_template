@@ -33,7 +33,7 @@
 \usepackage{fancyhdr} % to set page style
 \usepackage{indentfirst}
 %\usepackage{natbib}
-\usepackage{parskip} % remove first line tabulation
+%\usepackage{parskip} % remove first line tabulation
 \usepackage{setspace}
 \usepackage{titlesec}
 %\usepackage{titling} % to config maketitle
@@ -168,12 +168,14 @@
 	\cAuthorMail\\
 	\fontfamily{pcr}\selectfont
 	\dAuthorMail
-	\vspace*{-8pt}
+	\vspace*{-18pt}
 }
 
 \begin{document}
 
 \begin{titlepage}
+	\newgeometry{margin=2.5cm, left=3.5cm, right=3.5cm} % change margin
+	\onecolumn % needed in this case for newgeometry changes the page into twocolumn
 	\centering
 	{\huge\textbf{\universidad}}\par\vspace{0.6cm}
 	{\LARGE{\cede}}\vfill
@@ -192,7 +194,7 @@
 	
 	\Large{
 		\division\vfill
-		\aTitutlo, \btitulo, \cTitulo\vfill
+		\textbf{\aTitutlo, \btitulo, \cTitulo}\vfill
 		\textbf{\materia}\vfill
 	}
 
@@ -200,7 +202,7 @@
 		\centering
 		\begin{minipage}[t]{0.75\textwidth}
 			{\Large
-				\textbf{Integrantes:}
+				\textbf{Integrantes:}\par\vspace{8pt}
 				\begin{itemize}
 					\item \theAuthor\ - \theAuthorCode
 					\item \bAuthor\ - \bAuthorCode
@@ -222,6 +224,8 @@
 	{\large \startDate}\par
 \end{titlepage}
 
+\restoregeometry % end changed margin
+\twocolumn
 \maketitle
 
 \noindent\textbf{\textit{Abstract}— Este documento es un ejemplo de formato basado en las normas de IEEE para presentar un proyecto modular terminado. Los autores deben seguir las instrucciones, incluyendo formato y tamaño de papel para mantener el estándar de aceptación. Este documento puede interpretarse como un set de instrucciones para presentar su proyecto modular o como una plantilla para hacerlo. Como habrá notado, esta primera sección es para generar un resumen muy corto y a alta escala del alcance del proyecto no deberá utilizar más de 150 palabras en este apartado.\\
@@ -256,14 +260,14 @@ Los márgenes deben ser los siguientes:
 La hoja debe estar dividida en dos columnas, con un espacio de 4.22mm (0.17") entre columnas.
 Si requiere utilizar viñetas, refiérase a la lista de márgenes anterior para ver el estilo.
 
-\subsection{Descripción del Desarrollo del Proyecto Modular}
+\subsection{Descripción del Desarrollo del Proyecto Modular:\;}
 Todos los párrafos deben tener intentado o tabulaciones en la primera línea. También, todos los párrafos deben estar alineados de forma justificada y hacia la izquierda.
 
-\subsubsection{Tipo de Letra Fuente para el Documento}
+\subsubsection{Tipo de Letra Fuente para el Documento:\;}
 La totalidad del documento se debe escribir usando Times New Roman o equivalente. Otros tipos de fuente serán utilizados solamente cuando sea requerido para casos especiales.
 Los tamaños de fuente se incluyen en la tabla 1
 
-\subsubsection{Título y Detalles del Autor(es)}
+\subsubsection{Título y Detalles del Autor(es):\;}
 El título debe estar en fuente tamaño 24 puntos. Los nombres de los autores en tamaño de 11 puntos. El nombre de la universidad y departamentos en letra tamaño 10 puntos y cursiva y finalmente los correos electrónicos en tamaño 9 puntos con una fuente tipo Courier.
 
 \begin{table}[h]
@@ -293,13 +297,13 @@ Observe en la línea anterior cómo se hace una referencia a otra sección del d
 
 Cuando necesite crear varios niveles de sección en el documento (título, subtitulo, etc.) utilice estas normas:
 
-\subsubsection{Primer Nivel:}
+\subsubsection{Primer Nivel:\;}
 El primer nivel corresponde al de título, por tanto, debe estar centrado, indexado con números romanos y todas las letras en mayúscula con la primera letra de las palabras mayores en mayor tamaño.
 
-\subsubsection{Segundo Nivel:}
+\subsubsection{Segundo Nivel:\;}
 Un segundo nivel corresponde al subtítulo. Deben estar numerados usando letras seguidas por un punto y alineados a la izquierda. El tipo de letra es de 10 puntos y en cursiva.
 
-\subsubsection{Tercer nivel:}
+\subsubsection{Tercer nivel:\;}
 Un tercer nivel es como este que está leyendo. Utiliza letra cursiva de 10 puntos enlistados con números arábigos seguidos por un paréntesis. El cuerpo del ítem debe estar inmediatamente después del encabezado, sin saltos de línea.
 
 \subsection{Figuras y Tablas}
@@ -380,7 +384,8 @@ Los ejemplos enumerados en la sección de referencias de este documento incluyen
 
 \begin{itemize}
 	\item ejemplo de un libro \cite{MetevVeiko1998}
-	\item ejemplo de un libro parte de una serie \cite{Breckling1989}	\item ejemplo de otro artículo de revista \cite{Zhang1999}
+	\item ejemplo de un libro parte de una serie \cite{Breckling1989}
+	\item ejemplo de otro artículo de revista \cite{Zhang1999}
 	\item ejemplo de un artículo de conferencia [4] \cite{Wegmuller2000}
 	\item ejemplo de una patente \cite{Sorace1997}
 	\item ejemplo de un sitio web \cite{IEEEwebsite}
