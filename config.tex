@@ -1,0 +1,225 @@
+\documentclass[10pt,twocolumn,letterpaper]{article}
+
+%% Language and font encodings
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{times} % Times New Roman
+\usepackage{courier}
+
+%% Sets page size and margins
+\usepackage[top=0.75in,bottom=1in,left=0.68in,right=0.68in]{geometry}
+\setlength{\columnsep}{0.17in} % page columns separation
+
+%% Useful packages
+\usepackage{amsmath}
+\usepackage{array} % <-- add this line for m{} column type
+\usepackage[hidelinks]{hyperref} % hyperlinks support
+\usepackage{float} % to insert images at same place as latex code with H
+\usepackage{graphicx} % images support
+%\usepackage{listings} % codeblock support
+% \usepackage{longtable} % longtable support
+%\usepackage{smartdiagram} % diagrams support
+\usepackage[most]{tcolorbox} % callouts support
+%\usepackage[colorinlistoftodos]{todonotes}
+\usepackage[dvipsnames, table, xcdraw]{xcolor} % Tables support
+% \usepackage{tabularx}
+%\usepackage{zed-csp} % cchemas support
+
+%% Formating
+\usepackage{authblk} % to add authors in maketitle
+%\usepackage{blindtext} % to gen filler text
+\usepackage[labelfont=footnotesize, labelformat=simple, labelsep=period, figurename=Fig.]{caption} % to change prefix of the image caption
+% \usepackage{apacite}
+\usepackage{cite} % useful to compress multiple quotations into a single entry
+\usepackage{enumitem}
+\usepackage{etoolbox} % for \patchcmd
+\usepackage{fancyhdr} % to set page style
+\usepackage[none]{hyphenat} % Disables hyphenation
+\usepackage{indentfirst}
+%\usepackage{natbib}
+%\usepackage{parskip} % remove first line tabulation
+\usepackage{setspace}
+\usepackage{titlesec}
+%\usepackage{titling} % to config maketitle
+
+%% Variables
+% Main images
+\newcommand{\logoUdg}{logo-udg.jpg}
+\newcommand{\logoCucei}{logo-cucei.jpg}
+
+% School data
+\newcommand{\universidad}{Universidad de Guadalajara}
+\newcommand{\cede}{Centro Universitario de Ciencias Exactas e Ingenierías}
+
+% Subject data
+\newcommand{\materia}{Materia}
+\newcommand{\carrera}{Ingeniería en Computación}
+\newcommand{\division}{División de Tecnologías para la Integración CiberHumana}
+\newcommand{\theTitle}{Formato para Presentar Proyectos Modulares}
+\newcommand{\profesor}{Profesor}
+\newcommand{\seccion}{Sección}
+\newcommand{\nrc}{NRC}
+\newcommand{\clave}{Clave}
+\newcommand{\generation}{2025A}
+\newcommand{\startDate}{12 de mayo de 2025}
+
+% Author(s) data
+\newcommand{\theAuthor}{Nombre del líder del proyecto}
+\newcommand{\bAuthor}{nombre del segundo participante}
+\newcommand{\cAuthor}{nombre del tercer participante}
+\newcommand{\dAuthor}{nombre del asesor}
+
+\newcommand{\theAuthorCode}{A code}
+\newcommand{\bAuthorCode}{B code}
+\newcommand{\cAuthorCode}{C code}
+\newcommand{\dAuthorCode}{D code}
+
+\newcommand{\theAuthorMail}{first@mail.com}
+\newcommand{\bAuthorMail}{second@mail.com}
+\newcommand{\cAuthorMail}{third@mail.com}
+\newcommand{\dAuthorMail}{fourth@mail.com}
+
+% Authors titles
+\newcommand{\theAuthorTitle}{Ingeniero en Computación}
+\newcommand{\bAuthorTitle}{Ingeniero en Computación y Electrónica}
+\newcommand{\cAuthorTitle}{Ingeniero en Biomédica}
+
+% Repo data
+\newcommand{\repositorio}{}
+\newcommand{\version}{}
+\newcommand{\licencia}{}
+
+% Team data
+\newcommand{\teamName}{Equipo}
+
+% Content
+\newcommand{\moduloText}{
+	Se describe brevemente la relación que existe de este módulo con el proyecto
+	modular a presentar, usar como referencia el siguiente enlace.
+	\url{http://www.cucei.udg.mx/carreras/computacion/sites/default/files/adjuntos/criteriosaprobacion_0.pdf}
+}
+
+%% Declaration
+\date{}
+\graphicspath{ {img/} }
+\addto\captionsspanish{\renewcommand{\contentsname}{Índice}}
+\renewcommand{\lstlistingname}{Código} % Para cambiar el caption de los código
+
+%% Fonts sizes
+\makeatletter
+\renewcommand{\tiny}{\fontsize{6.5pt}{7pt}\selectfont} % 6pt with 7pt line spacing
+\renewcommand{\scriptsize}{\fontsize{7pt}{8pt}\selectfont} % 7pt / 8pt
+\renewcommand{\footnotesize}{\fontsize{8pt}{9pt}\selectfont} % 8pt / 9pt
+\renewcommand{\small}{\fontsize{9pt}{10pt}\selectfont} % 9pt / 10pt
+\renewcommand{\normalsize}{\fontsize{10pt}{11pt}\selectfont} % 10pt / 11pt (default)
+\renewcommand{\large}{\fontsize{11pt}{12pt}\selectfont} % 11pt / 12pt
+\renewcommand{\Large}{\fontsize{12pt}{14pt}\selectfont} % 12pt / 14pt
+\renewcommand{\LARGE}{\fontsize{14pt}{16pt}\selectfont} % 14pt / 16pt
+\renewcommand{\huge}{\fontsize{16pt}{18pt}\selectfont} % 16pt / 18pt
+\renewcommand{\Huge}{\fontsize{24pt}{26pt}\selectfont} % 24pt / 26pt
+\makeatother
+
+\AtBeginEnvironment{thebibliography}{\footnotesize}	% or \footnotesize
+
+%% Spacing
+\newcommand{\nl}{\par\vspace{0.4cm}}
+% \setlength{\parskip}{10.5pt} % Espaciado de línea anterior
+\setstretch{1.03} % Interlineado
+%\setlength{\parindent}{4pt} % Sangría
+
+% Itemize and enumerate
+\setlist[itemize]{itemsep=0pt, topsep=0pt, parsep=1.08pt, partopsep=1pt, after=\vspace{10.45pt}}
+\setlist[enumerate]{itemsep=0pt, topsep=0pt, parsep=1.08pt, partopsep=1pt, after=\vspace{10.45pt}}
+
+% Captions
+\setlength{\floatsep}{12pt}
+\setlength{\intextsep}{12pt}
+
+% Tables
+\let\oldtabular\tabular
+\renewcommand{\tabular}{\footnotesize\oldtabular}
+% \renewcommand{\arraystretch}{1.2} % <-- Adjust vertical spacing
+\addto\captionsspanish{\renewcommand{\tablename}{\scshape \footnotesize Tabla}}
+
+% --- Set caption spacing to 0pt for tables ---
+% \captionsetup[table]{skip=0pt}
+
+%% Styles
+\hypersetup{colorlinks=false} % Esilo de enlaces
+\urlstyle{same}
+
+\pagestyle{fancy}
+% Header
+\renewcommand{\headrulewidth}{0pt} % Elimina la línea del encabezado
+% \setlength{\headheight}{15pt} % Ajuste necesario para evitar warnings
+
+\fancyhead{}
+\rhead{
+	\begin{flushright}
+		\theTitle
+	\end{flushright}
+}
+
+% Footer
+\fancyfoot{}
+\lfoot{\small\materia}
+\cfoot{\thepage} % Paginación
+\rfoot{\small Curso impartido por \profesor}
+
+%% Title
+\makeatletter
+\renewcommand{\@maketitle}{%
+	\newpage
+	\null
+	\vskip 0em%
+	\begin{center}
+		\begin{minipage}{0.7\textwidth}
+			\centering
+			\let \footnote \thanks
+			{\LARGE \@title}
+			% \vskip 1.5em%
+			{\large
+				\lineskip .5em%
+				\begin{tabular}[t]{c}
+					\@author
+				\end{tabular}
+			}
+			\vskip -.5em%
+			{\university}
+			\vskip .5em%
+				{\small \mails}
+			% \vskip .5em%
+			% {\large \@date}
+			% \vskip 1em%
+		\end{minipage}
+	\end{center}
+}
+\makeatother
+
+\title{
+	\Huge \theTitle
+}
+
+\author{\theAuthor}
+\author{\bAuthor}
+\author{\cAuthor}
+\author{\dAuthor}
+
+\newcommand{\university}{
+	\textit{CENTRO UNIVERSITARIO DE CIENCIAS}\\
+	\textit{EXACTAS E INGENIERÍAS, (CUCEI, UDG)}
+}
+
+\newcommand{\mails}{
+	\fontfamily{pcr}\selectfont
+	\theAuthorMail\\
+	\fontfamily{pcr}\selectfont
+	\bAuthorMail\\
+	\fontfamily{pcr}\selectfont
+	\cAuthorMail\\
+	\fontfamily{pcr}\selectfont
+	\dAuthorMail
+}
+
+\affil{}
